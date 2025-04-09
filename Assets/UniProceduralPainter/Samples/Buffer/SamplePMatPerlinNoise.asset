@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79dbb724c1b94145908a5d7c5a30c7c, type: 3}
+  m_Name: SamplePMatPerlinNoise
+  m_EditorClassIdentifier: 
+  OutputSetting:
+    OutputFormat: 8
+    Dimension: 0
+    TextureSize: {x: 1024, y: 1024}
+  PropertyDataList:
+  - PropertyName: _Color
+    PropertyDescription: Color
+    Type: 3
+    PropertyPathOrValue: 1, 1, 1, 1
+  - PropertyName: _PerlinNoise3DParams
+    PropertyDescription: Perlin Noise Params
+    Type: 6
+    PropertyPathOrValue: 4, 0, Assets/UniProceduralPainter/Samples/Buffer/PerlinNoiseData.txt
+  - PropertyName: _ViewDepth
+    PropertyDescription: Z
+    Type: 1
+    PropertyPathOrValue: 1.37
+  Shader: {fileID: 4800000, guid: b8f1c9b5b64dc0f46817d9124b6f2ca4, type: 3}

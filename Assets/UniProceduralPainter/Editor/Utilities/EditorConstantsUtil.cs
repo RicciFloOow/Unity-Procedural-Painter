@@ -10,6 +10,7 @@ namespace UniProceduralPainter.Editor
         #region ----File Extension----
         public const string FILE_EXTENSION_PNG = ".png";
         public const string FILE_EXTENSION_EXR = ".exr";
+        public const string FILE_EXTENSION_TEXT = ".txt";
         #endregion
 
         #region ----Menu----

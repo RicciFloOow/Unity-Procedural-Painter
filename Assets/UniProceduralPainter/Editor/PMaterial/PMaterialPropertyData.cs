@@ -127,8 +127,8 @@ namespace UniProceduralPainter.Editor
                                 break;
                             }
                             int stride = int.Parse(splits[0]);
-                            bool isBinary = bool.Parse(splits[1]);
-                            TextAsset ta = AssetDatabase.LoadAssetAtPath<TextAsset>(PropertyPathOrValue);
+                            bool isBinary = int.Parse(splits[1]) == 1;
+                            TextAsset ta = AssetDatabase.LoadAssetAtPath<TextAsset>(splits[2]);
                             if (ta == null)
                             {
                                 Debug.LogError("未能在" + splits[2] + "处找到目标数据文件!");
@@ -136,6 +136,7 @@ namespace UniProceduralPainter.Editor
                             }
                             property.ComputeBufferStride = stride;
                             property.SetComputeBuffer(ta, isBinary);
+                            property.TempBufferDataAsset = ta;
                         }
                     }
                     break;

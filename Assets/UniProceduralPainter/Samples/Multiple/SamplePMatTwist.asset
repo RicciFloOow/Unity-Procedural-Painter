@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79dbb724c1b94145908a5d7c5a30c7c, type: 3}
+  m_Name: SamplePMatTwist
+  m_EditorClassIdentifier: 
+  OutputSetting:
+    OutputFormat: 8
+    Dimension: 0
+    TextureSize: {x: 1024, y: 1024}
+  PropertyDataList:
+  - PropertyName: _ChessboardTex
+    PropertyDescription: "\u68CB\u76D8\u7EB9\u7406"
+    Type: 5
+    PropertyPathOrValue: Assets/UniProceduralPainter/Samples/Multiple/SamplePMatChessboard.asset
+  - PropertyName: _TwistParam
+    PropertyDescription: Twist
+    Type: 1
+    PropertyPathOrValue: -1.97
+  Shader: {fileID: 4800000, guid: ca03d9b9e73b2004980889a3105a9058, type: 3}

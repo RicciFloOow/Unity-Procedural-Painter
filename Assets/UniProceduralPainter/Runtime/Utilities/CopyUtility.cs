@@ -41,6 +41,21 @@ namespace UniProceduralPainter
             //
             srcSpan.Slice(startIndex, Length).CopyTo(destByteSpan);
         }
+
+        /// <summary>
+        /// 从一个uint的array中拷贝至一个byte的array
+        /// </summary>
+        /// <param name="src"></param>
+        /// <param name="dest"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void CopyUintArrayToByteArray(ref uint[] src, ref byte[] dest)
+        {
+            Span<uint> srcSpan = src.AsSpan();
+            Span<byte> srcByteSpan = MemoryMarshal.AsBytes(srcSpan);
+            Span<byte> destSpan = dest.AsSpan();
+            //
+            srcByteSpan.CopyTo(destSpan);
+        }
         #endregion
     }
 }
