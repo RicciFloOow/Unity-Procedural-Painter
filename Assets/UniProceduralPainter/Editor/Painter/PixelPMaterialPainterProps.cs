@@ -57,7 +57,12 @@ namespace UniProceduralPainter.Editor
         {
             EditorGUILayout.BeginVertical(EditorStyles.helpBox);
             //绘制
+            EditorGUI.BeginChangeCheck();
             prop.TextureType = (PMaterialPropertyType)EditorGUILayout.EnumPopup(new GUIContent("纹理类型: ", "Texture: Tex2D或是Cubemap; RTHandle: PMaterial渲染的结果"), (PMatTextureSourceType)((int)prop.Type));
+            if (EditorGUI.EndChangeCheck())
+            {
+                PMatPipeline.Instance.UpdateBindingRenderingMaterial();
+            }
             //
             if (prop.Type == PMaterialPropertyType.Texture)
             {
@@ -84,6 +89,7 @@ namespace UniProceduralPainter.Editor
                     {
                         prop.SetRTHandleValue(prop.TempChildPMat);
                     }
+                    PMatPipeline.Instance.UpdateBindingRenderingMaterial();
                 }
             }
             EditorGUILayout.EndVertical();

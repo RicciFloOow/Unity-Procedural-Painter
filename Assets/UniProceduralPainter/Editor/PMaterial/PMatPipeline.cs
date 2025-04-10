@@ -42,7 +42,28 @@ namespace UniProceduralPainter.Editor
         public void UpdateBindingRenderingMaterial()
         {
             //更新m_RootPMat下绑定的PMat
-
+            //懒人办法，全检查一遍
+            for (int i = 0; i < m_RootPMat.PropertyList.Count; i++)
+            {
+                var prop = m_RootPMat.PropertyList[i];
+                var pMat = prop.ValuePMaterial;
+                if (pMat != null)
+                {
+                    bool contains = m_ChildrenPMats.Contains(pMat);
+                    if (contains && prop.Type == PMaterialPropertyType.Texture)
+                    {
+                        m_ChildrenPMats.Remove(pMat);
+                        pMat.PropertiesSerialization();
+                        pMat.OnExitPMaterialEditor();
+                    }
+                    else if (!contains && prop.Type == PMaterialPropertyType.RTHandle)
+                    {
+                        m_ChildrenPMats.Add(pMat);
+                        pMat.PropertiesDeserialization();
+                        pMat.OnEnterPMaterialEditor();
+                    }
+                }
+            }
         }
 
         public void UnbindingRenderingMaterial()
