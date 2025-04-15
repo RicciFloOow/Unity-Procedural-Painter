@@ -166,7 +166,7 @@ namespace UniProceduralPainter.Editor
                 string filenameWithoutExtension = (lastDotIndex > 0) ? filenameWithExtension.Substring(0, lastDotIndex) : filenameWithExtension;
                 filenameWithoutExtension += "_Output";
                 //
-                EditorFileUtility.AutoExportRTHandle(s_selectPMat.OutputHandle, ref m_ExportName, ref m_ExportPath, folderPath, filenameWithoutExtension);
+                EditorFileUtility.AutoExportRTHandle(s_selectPMat.OutputHandle, ref m_ExportPath, ref m_ExportName, folderPath, filenameWithoutExtension);
             }
             GUILayout.Space(5);
             EditorGUILayout.EndVertical();
