@@ -102,7 +102,17 @@ namespace UniProceduralPainter.Editor
         [HideInInspector]
         public List<PMaterialPropertyData> PropertyDataList;
 
-        public IReadOnlyList<PMaterialProperty> PropertyList => m_PropertyList.AsReadOnly();
+        public IReadOnlyList<PMaterialProperty> PropertyList
+        {
+            get
+            {
+                if (m_PropertyList == null)
+                {
+                    PropertiesDeserialization();
+                }
+                return m_PropertyList.AsReadOnly();
+            }
+        }
 
         protected List<PMaterialProperty> m_PropertyList;
 
